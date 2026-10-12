@@ -50,18 +50,16 @@ function coloresRandom(){
     }
 }
 
-//código pedido a la IA para hacer que la imagen rebote
+//código que transforma la escala de la imagen a una mayor, luego
+//retrasa la ejecucion del codigo 80 milisegundos, y devuelve la
+//imagen a escala normal para hacer un efecto animacion
 function animacionImagen(){
-    imagen.animate(
-    [
-      { transform: "scale(1)" },
-      { transform: "scale(1.3)" },
-      { transform: "scale(1)" }
-    ],
-    {
-      duration: 400,
-      easing: "ease"
-    }
-  );
+    imagen.style.transform="scale(1.2)";
+    // setTimeout() establece un temporizador que ejecuta una función 
+    // o una pieza de código específica una vez que expira el temporizador.
+    setTimeout(() => {
+  imagen.style.transform="scale(1.0)";
+}, "80");
+    
 }
      
