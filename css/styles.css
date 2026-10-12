@@ -1,0 +1,53 @@
+ /*reiniciamos los valores css iniciales del propio 
+    navegador y ponemos los que queramos */
+* {
+    margin: 4vh;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: rgb(119, 146, 184); 
+}
+#titulo{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 40px;
+}
+/*centramos la imagen*/
+#seccionJuego{
+    text-align: center;
+}
+/*al ser la imagen png, añadimos color al fondo para 
+poder luego cambiarlo cada vez que salga un resultado nuevo:
+piedra,papel o tijera*/
+#imagen{
+    width: 15vw;
+    margin: auto;
+    background-color: aliceblue;
+    border-radius: 90px;
+}
+/**estilos del boton*/
+#boton{
+    background-color: rgb(114, 160, 105);
+    color: rgb(255, 251, 251);
+    width: 10vw;
+    height: 10vh;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 30px;
+    margin-top: 10vh;
+    border: white solid 1px;
+    
+}
+/*estilos al pasar el ratón por encima del botón*/
+#boton:hover{
+    background-color: rgb(86, 117, 79);
+    color: rgb(218, 214, 214);
+}
+/*estilo en el momento de hacer click en el botón*/
+#boton:active{
+    background-color: rgb(86, 137, 72);
+    color: rgb(218, 214, 214);
+}
+
