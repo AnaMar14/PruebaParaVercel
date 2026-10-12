@@ -3,25 +3,27 @@ const boton= document.getElementById("boton");
 const imagen= document.getElementById("imagen");
 //añadimos un evento al botón que se active cada vez que lo pulsemos
 boton.addEventListener("click", ()=>{
-    //cada vez que clickemos el botón, se cambiará el fondo de la
-    //imagen de la mano, para que si sale dos veces una misma imagen
-    //el usuario entienda que se ha vuelto a generar. Sin embargo
-    //a veces por azar puede salir la misma imagen y color dos veces seguidas
+    //cada vez que clickemos el botón, se cambiará el color de fondo de la
+    //imagen de la mano
     imagen.style.backgroundColor=coloresRandom();
     //generemos un número random del 1 al 3, depende
     //del resultado la imagen de la mano cambiará a
     //piedra, papel, o tijera
-    let numRandom=Math.round(Math.random()*3)+1;
-    
+    let numRandom=Math.floor(Math.random()*3)+1;
     switch(numRandom){
         case 1:
             imagen.src="img/papel.png";
+             animacionImagen(); //llamamos a la función creada animacionImagen
+                                //para que cada vez que se cambie de imagen esta haga
+                                //un efecto de rebote
             break;
         case 2: 
             imagen.src="img/piedra.webp";
+            animacionImagen();
             break;
         case 3:
             imagen.src="img/tijeras.webp";
+            animacionImagen();
             break;
     }
     
@@ -47,3 +49,19 @@ function coloresRandom(){
         
     }
 }
+
+//código pedido a la IA para hacer que la imagen rebote
+function animacionImagen(){
+    imagen.animate(
+    [
+      { transform: "scale(1)" },
+      { transform: "scale(1.3)" },
+      { transform: "scale(1)" }
+    ],
+    {
+      duration: 400,
+      easing: "ease"
+    }
+  );
+}
+     
